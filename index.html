@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            font-family: "Ubuntu", sans-serif;
+            box-sizing: border-box;
+        }
+
+        body{
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: #111;
+        }
+
+        .skills {
+            width: 100%;
+            max-width: 600px;
+            padding: 0 20px;
+        }
+        
+        .skill-name {
+            font-size: x-large;
+            color: antiquewhite;
+            font-weight: 700;
+            text-transform: uppercase;
+            margin: 20px 0;
+        }
+
+        .skill-bar {
+            height: 14px;
+            background: #282828;
+            border-radius: 3px;
+        }
+
+        .skill-per {
+            height: 14px;
+            background: #ADD8E6;
+            border-radius: 3px;
+            max-width: attr(value);
+            position: relative;
+            animation: fillbars 2.5s 1;
+
+        }
+
+        .skill-per::before{
+            content: "";
+            position: absolute;
+            width: 10px;
+            height: 10px;
+            background-color: #f1f1f1;
+            top: -20px;
+            right: 0;
+            transform: translate(50%) rotate(45deg);
+        }
+
+        .skill-per::after{
+            content: attr(value);
+            position: absolute;
+            padding: 4px 6px;
+            background: #f1f1f1;
+            border-radius:4px;
+            font-size: 12px;
+            top: -35px;
+            right: 0;
+            transform: translateX(50%);
+        }
+
+        @keyframes fillbars {
+            from {
+                width: 0%;
+            }
+            to {
+                width: 100%;
+            }
+        }
+
+
+    </style>
+</head>
+<body>
+    <div class="skills">
+        <div class="skill">
+            <div class="skill-name">HTML</div>
+            <div class="skill-bar">
+                <div class="skill-per" value="90%" style="max-width: 90%;"></div>
+            </div>
+        </div>
+
+        <div class="skill">
+            <div class="skill-name">CSS</div>
+            <div class="skill-bar">
+                <div class="skill-per" value="70%" style="max-width: 70%;"></div>
+            </div>
+        </div>
+
+        <div class="skill">
+            <div class="skill-name">Javascript</div>
+            <div class="skill-bar">
+                <div class="skill-per" value="60%" style="max-width: 60%;"></div>
+            </div>
+        </div>
+
+    </div>
+</body>
+</html>
